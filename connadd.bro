@@ -18,6 +18,16 @@ module Conn;
             };
     }
      
+#establish event
+event connection_established(c: connection)
+ 
+          {
+          if (Site::is_local_addr(c$id$local_orig) == F)
+          {
+               TimeMachine::dump_conn(c);
+               }
+     }     
+     
 event connection_state_remove(c: connection)
             {
             local orig_loc = lookup_location(c$id$orig_h);
