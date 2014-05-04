@@ -1,1 +1,19 @@
-#script for installing 
+!#bin/bash/
+
+#script for installing Time Machine
+
+#run updates... will not ask for permission
+sudo apt-get -y updates
+sudo apt-get -y dist-upgrades
+
+#install anything that may be a dependency
+sudo apt-get install 
+
+#install git if not already
+
+sudo apt-get -y install git-core git
+
+#download latest source (and pray they haven't altered the folder structure) and put into "timemachine"
+
+sudo git https://github.com/bro/time-machine.git timemachine
+
