@@ -8,11 +8,11 @@ apt-get -y dist-upgrade
 
 #install anything that may be a dependency.
 
-apt-get install libpcap0.8 libpcap0.8-dev libpcap-dev > outputinst.txt
+apt-get install -y libpcap0.8 libpcap0.8-dev libpcap-dev > outputinst.txt
 
 #install git if not already
 
-apt-get -y install git-core git >> outputinst.txt
+apt-get install -y git-core git >> outputinst.txt
 
 #download latest source (and pray they haven't altered the folder structure) and put into "timemachine"
 
