@@ -16,7 +16,7 @@ apt-get -y install git-core git >> outputinst.txt
 
 #download latest source (and pray they haven't altered the folder structure) and put into "timemachine"
 
-git https://github.com/bro/time-machine.git timemachine
+git clone https://github.com/bro/time-machine.git timemachine
 
 cd timemachine
 
