@@ -47,3 +47,5 @@ mkdir -p /usr/local/bro/share/bro/base/frameworks/tmint/
 cp /tmint/main.bro /usr/local/bro/share/bro/base/frameworks/tmint/main.bro
 
 cp /tmint/__load__.bro /usr/local/bro/share/bro/base/frameworks/tmint/__load__.bro
+
+echo "@load base/frameworks/tmint/" >> /usr/local/bro/share/bro/site/local.bro
