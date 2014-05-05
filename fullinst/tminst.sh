@@ -28,5 +28,22 @@ make > outputinst.txt
 
 make install > outputinst.txt
 
-echo "Add configuration file. Assumes your main adapter is eth0. Change /usr/local/etc/timemachine.cfg"
+#ensure time machine can write to /usr/local/var/tm
 
+mkdir -p /usr/local/var/tm
+
+chmod 0666 /usr/local/var/tm
+
+echo "Time Machine config found here: /usr/local/etc/timemachine.cfg"
+
+#install attached scripts to bro for communication purposes
+
+cd ../
+
+cd /tmint/
+
+mkdir -p /usr/local/bro/share/bro/base/frameworks/tmint/
+
+cp /tmint/main.bro /usr/local/bro/share/bro/base/frameworks/tmint/main.bro
+
+cp /tmint/__load__.bro /usr/local/bro/share/bro/base/frameworks/tmint/__load__.bro
