@@ -1,4 +1,4 @@
-!#bin/bash
+#!/bin/bash
 
 #script for installing Time Machine
 
