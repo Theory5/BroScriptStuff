@@ -1,4 +1,4 @@
-!#bin/bash/
+!#bin/bash
 
 #script for installing Time Machine
 
@@ -40,7 +40,7 @@ echo "Time Machine config found here: /usr/local/etc/timemachine.cfg"
 
 cd ../
 
-cd /tmint/
+cd tmint
 
 mkdir -p /usr/local/bro/share/bro/base/frameworks/tmint/
 
