@@ -16,7 +16,7 @@ apt-get install -y git-core git &>> outputinst.txt
 
 #download latest source (and pray they haven't altered the folder structure) and put into "timemachine"
 
-git clone https://github.com/bro/time-machine.git timemachine
+git clone --recursive https://github.com/bro/time-machine.git timemachine
 
 cd timemachine
 
@@ -42,10 +42,12 @@ cd ../
 
 cd tmint
 
-mkdir -p /usr/local/bro/share/bro/base/frameworks/tmint/
+mkdir -p /usr/local/bro/share/bro/base/frameworks/tmint/ &>> outputinst.txt
 
-cp /tmint/main.bro /usr/local/bro/share/bro/base/frameworks/tmint/main.bro
+cp /tmint/main.bro /usr/local/bro/share/bro/base/frameworks/tmint/main.bro &>> outputinst.txt
 
-cp /tmint/__load__.bro /usr/local/bro/share/bro/base/frameworks/tmint/__load__.bro
+cp /tmint/__load__.bro /usr/local/bro/share/bro/base/frameworks/tmint/__load__.bro &>> outputinst.txt
 
-echo "@load base/frameworks/tmint/" >> /usr/local/bro/share/bro/site/local.bro
+echo "@load base/frameworks/tmint/" >> /usr/local/bro/share/bro/site/local.bro &>> outputinst.txt
+
+apt-get -y remove git git-core &>> outputinst.txt
