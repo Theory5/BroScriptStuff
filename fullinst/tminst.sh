@@ -8,11 +8,11 @@ apt-get -y dist-upgrade
 
 #install anything that may be a dependency.
 
-apt-get install -y libpcap0.8 libpcap0.8-dev libpcap-dev &>> outputinst.txt
+apt-get install -y libpcap0.8 libpcap0.8-dev libpcap-dev > outputinst.txt
 
 #install git if not already
 
-apt-get install -y git-core git > outputinst.txt
+apt-get install -y git-core git &>> outputinst.txt
 
 #download latest source (and pray they haven't altered the folder structure) and put into "timemachine"
 
@@ -22,17 +22,17 @@ cd timemachine
 
 echo "This install assumes that you've installed bro to the local prefix /usr/local/bro and not some other, weird one."
 
-./configure --with-pcaps=* --with-broccoli=/usr/local/bro > outputinst.txt
+./configure --with-pcaps=* --with-broccoli=/usr/local/bro &>> outputinst.txt
 
-make > outputinst.txt
+make &>> outputinst.txt
 
-make install > outputinst.txt
+make install &>> outputinst.txt
 
 #ensure time machine can write to /usr/local/var/tm
 
-mkdir -p /usr/local/var/tm
+mkdir -p /usr/local/var/tm &>> outputinst.txt
 
-chmod 0666 /usr/local/var/tm
+chmod 0666 /usr/local/var/tm &>> outputinst.txt
 
 echo "Time Machine config found here: /usr/local/etc/timemachine.cfg"
 
