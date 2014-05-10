@@ -52,4 +52,4 @@ echo "@load base/frameworks/tmint/" >> /usr/local/bro/share/bro/site/local.bro &
 
 apt-get -y remove git git-core &>> /var/log/tminst.txt
 
-echo "a log file of this installation was created in /var/log/ and is called tminst.txt"
+echo "a log file of this installation can be found here /var/log/tminst.txt"
