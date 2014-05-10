@@ -51,3 +51,5 @@ cp /tmint/__load__.bro /usr/local/bro/share/bro/base/frameworks/tmint/__load__.b
 echo "@load base/frameworks/tmint/" >> /usr/local/bro/share/bro/site/local.bro &>> /var/log/tminst.txt
 
 apt-get -y remove git git-core &>> /var/log/tminst.txt
+
+echo "a log file of this installation was created in /var/log/ and is called tminst.txt"
