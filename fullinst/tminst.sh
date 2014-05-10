@@ -40,15 +40,15 @@ echo "Time Machine config found here: /usr/local/etc/timemachine.cfg"
 
 cd ../
 
-cd tmint
+cd tminst
 
-mkdir -p /usr/local/bro/share/bro/base/frameworks/tmint/ &>> ~/var/log/tminst.txt
+mkdir -p /usr/local/bro/share/bro/base/frameworks/tminst/ &>> ~/var/log/tminst.txt
 
 cp /tmint/main.bro /usr/local/bro/share/bro/base/frameworks/tmint/main.bro &>> ~/var/log/tminst.txt
 
-cp /tmint/__load__.bro /usr/local/bro/share/bro/base/frameworks/tmint/__load__.bro &>> ~/var/log/tminst.txt
+cp /tmint/__load__.bro /usr/local/bro/share/bro/base/frameworks/tminst/__load__.bro &>> ~/var/log/tminst.txt
 
-echo "@load base/frameworks/tmint/" >> /usr/local/bro/share/bro/site/local.bro &>> ~/var/log/tminst.txt
+echo "@load base/frameworks/tminst/" >> /usr/local/bro/share/bro/site/local.bro &>> ~/var/log/tminst.txt
 
 # preface with a question/prompt?
 #apt-get -y remove git git-core &>> ~/var/log/tminst.txt
