@@ -8,11 +8,11 @@ apt-get -y update
 
 #install anything that may be a dependency.
 
-apt-get install -y libpcap0.8 libpcap0.8-dev libpcap-dev > outputinst.txt
+apt-get install -y libpcap0.8 libpcap0.8-dev libpcap-dev &> /var/log/tminst.txt
 
 #install git if not already
 
-apt-get install -y git-core git &>> outputinst.txt
+apt-get install -y git-core git &>> /var/log/tminst.txt
 
 #download latest source (and pray they haven't altered the folder structure) and put into "timemachine"
 
@@ -22,17 +22,17 @@ cd timemachine
 
 echo "This install assumes that you've installed bro to the local prefix /usr/local/bro and not some other, weird one."
 
-./configure --with-pcaps=* --with-broccoli=/usr/local/bro &>> outputinst.txt
+./configure --with-pcaps=* --with-broccoli=/usr/local/bro &>> /var/log/tminst.txt
 
-make &>> outputinst.txt
+make &>> /var/log/tminst.txt
 
-make install &>> outputinst.txt
+make install &>> /var/log/tminst.txt
 
 #ensure time machine can write to /usr/local/var/tm
 
-mkdir -p /usr/local/var/tm &>> outputinst.txt
+mkdir -p /usr/local/var/tm &>> /var/log/tminst.txt
 
-chmod 0666 /usr/local/var/tm &>> outputinst.txt
+chmod 0666 /usr/local/var/tm &>> /var/log/tminst.txt
 
 echo "Time Machine config found here: /usr/local/etc/timemachine.cfg"
 
@@ -42,12 +42,12 @@ cd ../
 
 cd tmint
 
-mkdir -p /usr/local/bro/share/bro/base/frameworks/tmint/ &>> outputinst.txt
+mkdir -p /usr/local/bro/share/bro/base/frameworks/tmint/ &>> /var/log/tminst.txt
 
-cp /tmint/main.bro /usr/local/bro/share/bro/base/frameworks/tmint/main.bro &>> outputinst.txt
+cp /tmint/main.bro /usr/local/bro/share/bro/base/frameworks/tmint/main.bro &>> /var/log/tminst.txt
 
-cp /tmint/__load__.bro /usr/local/bro/share/bro/base/frameworks/tmint/__load__.bro &>> outputinst.txt
+cp /tmint/__load__.bro /usr/local/bro/share/bro/base/frameworks/tmint/__load__.bro &>> /var/log/tminst.txt
 
-echo "@load base/frameworks/tmint/" >> /usr/local/bro/share/bro/site/local.bro &>> outputinst.txt
+echo "@load base/frameworks/tmint/" >> /usr/local/bro/share/bro/site/local.bro &>> /var/log/tminst.txt
 
-apt-get -y remove git git-core &>> outputinst.txt
+apt-get -y remove git git-core &>> /var/log/tminst.txt
