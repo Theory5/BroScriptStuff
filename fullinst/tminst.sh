@@ -4,7 +4,7 @@
 
 #run updates... will not ask for permission
 apt-get -y update
-apt-get -y dist-upgrade
+
 
 #install anything that may be a dependency.
 
