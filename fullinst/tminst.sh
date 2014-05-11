@@ -8,7 +8,7 @@ apt-get -y update
 
 #install anything that may be a dependency.
 
-apt-get install -y libpcap0.8 libpcap0.8-dev libpcap-dev &>  tminst.log
+apt-get install -y libpcap0.8 libpcap0.8-dev libpcap-dev libreadline6-dev &>  tminst.log
 
 #install git if not already
 
