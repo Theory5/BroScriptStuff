@@ -51,6 +51,6 @@ cp /timinst/__load__.bro /usr/local/bro/share/bro/base/frameworks/tminst/__load_
 echo "@load base/frameworks/tminst/" >> /usr/local/bro/share/bro/site/local.bro &>>  ../tminst.log
 
 # preface with a question/prompt?
-#apt-get -y remove git git-core &>>  ../tminst.log
+#apt-get remove git git-core &>>  ../tminst.log
 
-echo "a log file of this installation can be found here tminst.log"
+echo "a log file of this installation can be found in tminst.log"
