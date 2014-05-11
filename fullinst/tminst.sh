@@ -34,6 +34,8 @@ mkdir -p /usr/local/var/tm &>>  ../tminst.log
 
 chmod 0666 /usr/local/var/tm &>>  ../tminst.log
 
+cp ../tminst/timemachine.cfg /usr/local/etc/timemachine.cfg
+
 echo "Time Machine config found here: /usr/local/etc/timemachine.cfg"
 
 #install attached scripts to bro for communication purposes
