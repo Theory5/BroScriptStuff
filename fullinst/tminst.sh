@@ -22,7 +22,7 @@ cd timemachine
 
 echo "This install assumes that you've installed bro to the local prefix /usr/local/bro and not some other, weird one."
 
-./configure --with-pcaps=* --with-broccoli=/usr/local/bro &>> ../tminst.log
+./configure --with-pcaps=/usr/local/lib --with-broccoli=/usr/local/bro &>> ../tminst.log
 
 make &>>  ../tminst.log
 
