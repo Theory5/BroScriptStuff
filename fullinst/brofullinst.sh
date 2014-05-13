@@ -7,7 +7,30 @@
 apt-get -y update
 apt-get -y upgrade
 
+#install dependencies that bro may need
+
+apt-get -y install install libpcap0.8 libpcap0.8-dev libpcap-dev autogen gcc make libxml2-dev libgnutls-dev libcurl4-gnutls-dev \
+ libnl-dev build-essential autopoint xsltproc w3c-dtd-xhtml python-dev libxen-dev uuid-dev libdevmapper-dev \
+  libgnutls-dev libpciaccess-dev libxml2-dev pm-utils ebtables libcap2-bin libcap-dev \
+cmake make g++ flex bison libssl-dev python-dev swig zlib1g-dev libmagic-dev autoconf
+
+#install libgeoIP databases/packages
+
+apt-get -y install libgeoip-dev libgeoip1
+
 apt-get -y install git git-core
 
 git clone --recursive git://git.bro.org/bro bro
 
+cd bro
+
+./configure
+
+make
+
+make install
+
+echo "Default Bro Path is /usr/local/bro"
+
+#install some programs in the aux/bro-aux dir
+make install-aux
