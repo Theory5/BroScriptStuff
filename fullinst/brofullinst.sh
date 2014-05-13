@@ -28,6 +28,10 @@ cd bro
 
 make
 
+#removes any attempts at previous installations
+
+make clean
+
 make install
 
 #install some programs in the aux/bro-aux dir
