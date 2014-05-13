@@ -34,3 +34,7 @@ echo "Default Bro Path is /usr/local/bro"
 
 #install some programs in the aux/bro-aux dir
 make install-aux
+
+#append broctl command path to /etc/environment
+
+echo "export PATH=/usr/local/bro/bin:$PATH" &>> /etc/environment
