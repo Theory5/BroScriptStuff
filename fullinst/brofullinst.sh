@@ -3,3 +3,11 @@
 #Created by Theory5 with a ton of help from April and Ziggy
 
 
+#run updates without asking
+apt-get -y update
+apt-get -y upgrade
+
+apt-get -y install git git-core
+
+git clone --recursive git://git.bro.org/bro bro
+
