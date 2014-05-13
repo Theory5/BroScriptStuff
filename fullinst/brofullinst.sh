@@ -41,3 +41,10 @@ echo "Default Bro Path is /usr/local/bro"
 #append broctl command path to /etc/environment
 
 echo "export PATH=/usr/local/bro/bin:$PATH" &>> /etc/environment
+
+#add bro cronjob to ensure bro is always running
+
+crontab -e > brocron
+echo "0-59/5 * * * * $PREFIX/bin/broctl cron" >> brocron
+crontab brocron
+rm brocron
