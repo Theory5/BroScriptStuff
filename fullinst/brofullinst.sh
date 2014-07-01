@@ -1,3 +1,4 @@
+#!/bin/bash
 #This is for the complete installation of bro, all its dependencies and support to connect it to timemachine, whose install
 #is located in the tminst.sh file
 #Created by Theory5 with a ton of help from April and Ziggy
@@ -9,7 +10,7 @@ apt-get -y upgrade
 
 #install dependencies that bro may need
 
-apt-get -y install install libpcap0.8 libpcap0.8-dev libpcap-dev autogen gcc make libxml2-dev libgnutls-dev libcurl4-gnutls-dev libnl-dev build-essential autopoint xsltproc w3c-dtd-xhtml python-dev libxen-dev uuid-dev libdevmapper-dev libgnutls-dev libpciaccess-dev libxml2-dev pm-utils ebtables libcap2-bin libcap-dev cmake make g++ flex bison libssl-dev python-dev swig zlib1g-dev libmagic-dev autoconf curl bind9 sendmail gawk
+apt-get -y install libpcap0.8 libpcap0.8-dev libpcap-dev autogen gcc libxml2-dev; apt-get -y install libgnutls-dev libcurl4-gnutls-dev libnl-dev build-essential; apt-get -y install autopoint xsltproc w3c-dtd-xhtml python-dev libxen-dev uuid-dev; apt-get -y install libdevmapper-dev libgnutls-dev libpciaccess-dev libxml2-dev pm-utils; apt-get -y install ebtables libcap2-bin libcap-dev cmake make g++ flex bison; apt-get -y install libssl-dev python-dev swig zlib1g-dev libmagic-dev autoconf; apt-get -y install curl bind9 sendmail gawk  CMake
 
 #install libgeoIP databases/packages
 
@@ -46,4 +47,3 @@ echo "export PATH=/usr/local/bro/bin:$PATH" &>> /etc/environment
 
 
 echo "It is suggested that you add this cronjob to your crontab for housekeeping and ensuring bro will always be running. 0-59/5 * * * * $PREFIX/bin/broctl cron"
-
