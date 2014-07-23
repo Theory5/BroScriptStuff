@@ -18,6 +18,11 @@ apt-get -y install libgeoip-dev libgeoip1
 
 apt-get -y install git git-core
 
+#fixes "NO MTA" issue in ubuntu
+apt-get -y install postfix
+
+
+
 git clone --recursive git://git.bro.org/bro bro
 
 cd bro
