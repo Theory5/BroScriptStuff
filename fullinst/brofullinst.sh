@@ -21,7 +21,25 @@ apt-get -y install git git-core
 #fixes "NO MTA" issue in ubuntu
 apt-get -y install postfix
 
+#add CAF, was missing
 
+git clone --recursive https://github.com/actor-framework/actor-framework.git actor-framework
+
+cd actor-framework
+
+./configure
+
+make
+
+#remove any previous attempts at installation
+
+make clean 
+
+make install
+
+echo "CAF installed (hopefully)"
+
+cd ../
 
 git clone --recursive git://git.bro.org/bro bro
 
