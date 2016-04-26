@@ -1,0 +1,23 @@
+# install for PF RING, for managing multiple instances of packet monitoring sensors evenly with loadbalancing
+# Developed by Theory5 for use with broinst script
+#!/bin/bash
+#run as root!
+
+# instructions taken from http://www.ntop.org/get-started/download/#PF_RING may be modified slightly
+
+#move to home dir (stupid version, need to rewrite) 
+
+cd 
+
+git clone --recursive https://github.com/ntop/PF_RING.git PF_RING
+
+cd PF_RING/kernel
+
+make
+
+insmod ./pf_ring.ko
+
+cd ../
+
+make
+
