@@ -41,11 +41,50 @@ echo "CAF installed (hopefully)"
 
 cd ../
 
+# install for PF RING, for managing multiple instances of packet monitoring sensors evenly with loadbalancing
+
+# instructions taken from http://www.ntop.org/get-started/download/#PF_RING may be modified slightly
+
+#move to home dir (stupid version, need to rewrite) 
+
+cd 
+
+git clone --recursive https://github.com/ntop/PF_RING.git PF_RING
+
+cd ../userland
+
+make
+
+#return to beginning
+
+cd lib
+
+./configure --prefix=/opt/pfring
+make install
+
+cd ../libpcap
+./configure --prefix=/opt/pfring
+make install
+
+cd ../tcpdump-*
+./configure --prefix=/opt/pfring
+make install
+
+cd ../../kernel
+
+make install
+
+insmod ./pf_ring.ko
+
+modprobe pf_ring enable_tx_capture=0 min_num_slots=32768
+
+cd
+
 git clone --recursive git://git.bro.org/bro bro
 
 cd bro
 
-./configure
+./configure --with-pcap=/opt/pfring
 
 make
 
