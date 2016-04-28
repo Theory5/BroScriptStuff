@@ -66,7 +66,7 @@ cd ../libpcap
 ./configure --prefix=/opt/pfring
 make install
 
-cd ../tcpdump-*
+cd ../tcpdump
 ./configure --prefix=/opt/pfring
 make install
 
