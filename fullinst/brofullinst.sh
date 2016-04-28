@@ -89,6 +89,8 @@ make install
 
 cd ../../kernel
 
+./configure --prefix=/opt/pfring
+
 make
 
 make install
