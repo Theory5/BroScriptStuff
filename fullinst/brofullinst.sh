@@ -2,7 +2,7 @@
 #This is for the complete installation of bro, all its dependencies and support to connect it to timemachine, whose install
 #is located in the tminst.sh file
 #Created by Theory5 with a ton of help from April and Ziggy
-
+# This script has been rewritten to support automatic PF_Ring deployment before installing bro. It is IMPERITIVE that you remove all versions of libpcap before initializing!
 
 #run updates without asking
 apt-get -y update
