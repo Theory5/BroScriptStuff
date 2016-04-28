@@ -10,7 +10,9 @@ apt-get -y upgrade
 
 #install dependencies that bro may need
 
-apt-get -y install libpcap0.8 libpcap0.8-dev libpcap-dev autogen gcc libxml2-dev; apt-get -y install libgnutls-dev libcurl4-gnutls-dev libnl-dev build-essential; apt-get -y install autopoint xsltproc w3c-dtd-xhtml python-dev libxen-dev uuid-dev; apt-get -y install libdevmapper-dev libgnutls-dev libpciaccess-dev libxml2-dev pm-utils; apt-get -y install ebtables libcap2-bin libcap-dev cmake make g++ flex bison; apt-get -y install libssl-dev python-dev swig zlib1g-dev libmagic-dev autoconf; apt-get -y install curl bind9 sendmail gawk  CMake
+# libpcap0.8 libpcap0.8-dev libpcap-dev are removed due to PF_Ring build needing it's own compiled version
+
+apt-get -y install  autogen gcc libxml2-dev; apt-get -y install libgnutls-dev libcurl4-gnutls-dev libnl-dev build-essential; apt-get -y install autopoint xsltproc w3c-dtd-xhtml python-dev libxen-dev uuid-dev; apt-get -y install libdevmapper-dev libgnutls-dev libpciaccess-dev libxml2-dev pm-utils; apt-get -y install ebtables libcap2-bin cmake make g++ flex bison; apt-get -y install libssl-dev python-dev swig zlib1g-dev libmagic-dev autoconf; apt-get -y install curl bind9 sendmail gawk  CMake
 
 #install libgeoIP databases/packages
 
@@ -55,22 +57,39 @@ cd ../userland
 
 make
 
+make clean
+
+make install
+
 #return to beginning
 
 cd lib
 
 ./configure --prefix=/opt/pfring
+
+make
+
 make install
 
 cd ../libpcap
+
 ./configure --prefix=/opt/pfring
+
+make
+
 make install
 
 cd ../tcpdump
+
 ./configure --prefix=/opt/pfring
+
+make
+
 make install
 
 cd ../../kernel
+
+make
 
 make install
 
