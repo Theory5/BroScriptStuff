@@ -53,15 +53,7 @@ cd
 
 git clone --recursive https://github.com/ntop/PF_RING.git PF_RING
 
-cd PF_RING
-
-make
-
-make clean
-
-make install
-
-cd /userland/lib
+cd PF_RING/userland/lib
 
 ./configure --prefix=/opt/pfring
 
